@@ -18,17 +18,18 @@ public class MainActivity extends AppCompatActivity {
     public void checkValue(View view){
         EditText number = (EditText) findViewById(R.id.input);
         inputNumber = Integer.parseInt(number.getText().toString());
-
-        if(isTriangle() && isSquare()){
-            Toast.makeText(MainActivity.this, "The value is both Square and Triangle value", Toast.LENGTH_SHORT).show();
-        }else if(isTriangle() && !isSquare()){
-            Toast.makeText(MainActivity.this, "This value is a triangle value", Toast.LENGTH_SHORT).show();
-        }else if(!isTriangle() && isSquare()){
-            Toast.makeText(MainActivity.this, "This value is a square value", Toast.LENGTH_SHORT).show();
+        String message = "";
+        if(isTriangle()){
+            if(isSquare()){
+                message = "the number is both square and triangle";
+            }
+            message = "the number is triangle";
+        }else if(isSquare()){
+            message = "the number is square";
         }else{
-            Toast.makeText(MainActivity.this, "This value is neither square nor triangle", Toast.LENGTH_SHORT).show();
+            message = "the number is neither";
         }
-
+        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
     /**

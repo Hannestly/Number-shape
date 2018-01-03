@@ -1,4 +1,4 @@
-#Numbershape app (test)
+#Numbershape app (test)#
 
 Checks if the number entered by the user is triangular number/ square number or both
 
